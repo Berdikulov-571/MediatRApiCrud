@@ -17,7 +17,7 @@ namespace MediatRWebApi.CQRS.CommandHandlers
 
         public async Task<int> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            User? user = await _context.Users.FirstOrDefaultAsync(x => x.UserId == request.UserId);
+            User user = await _context.Users.FirstOrDefaultAsync(x => x.UserId == request.UserId);
 
             if (user != null)
             {
@@ -26,7 +26,8 @@ namespace MediatRWebApi.CQRS.CommandHandlers
                 user.Age = request.Age;
 
                 _context.Users.Update(user);
-                int result = await _context.SaveChangesAsync(cancellationToken);
+                int result = await _context.SaveChangesAsync();
+
                 return result;
             }
 

@@ -52,11 +52,11 @@ namespace MediatRWebApi.Controllers
         }
 
         [HttpPut]
-        public async ValueTask<IActionResult> UpdateAsync(UserUpdateDto user)
+        public async ValueTask<IActionResult> UpdateAsync(UpdateUserCommand user)
         {
-            object res = await _mediator.Send(user);
+            int result = await _mediator.Send(user);
 
-            return Ok(res);
+            return Ok(result);
         }
     }
 }
