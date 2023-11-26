@@ -5,5 +5,6 @@ namespace MediatRWebApi.CQRS.Commands
 {
     public class UpdateUserCommand : UserUpdateDto, IRequest<int>
     {
+
     }
 }
