@@ -14,7 +14,7 @@ namespace MediatRWebApi
             // Registration MediatR
             builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Docker")));
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
