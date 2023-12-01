@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MediatRWebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231124095344_Initial")]
+    [Migration("20231129101545_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
